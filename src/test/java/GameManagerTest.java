@@ -21,11 +21,6 @@ class GameManagerTest {
         gm.addUser(002, "Snoop", "Dog");
         gm.addUser(003, "Kim", "Kardasian");
 
-        //Order _order = new Order(900, 222,"Arnau");
-        // _order.setProductLines(001, 5);
-        // _order.setProductLines(002, 7);
-
-        //gm.placeOrder(222, "Arnau", _order);
     }
     @After
     public void tearDown() {
