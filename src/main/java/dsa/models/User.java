@@ -20,6 +20,7 @@ public class User {
     public User() {
     }
 
+
     public int getId() {
         return id;
     }
@@ -49,7 +50,6 @@ public class User {
     }
     public void addObj(Obj _obj) {
         this.objList.add(_obj);
-        this.objList_num = this.objList_num+1;
     }
 
     public void rmvObj(int index) {

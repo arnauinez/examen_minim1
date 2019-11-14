@@ -99,6 +99,7 @@ public class GameManagerImp implements GameManager{
     @Override
     public void addObj(int user_id, int id, String name, boolean obj_type, double score) {
         this.usersList.get(user_id).addObj(new Obj(id, name, obj_type, score));
+        this.usersList.get(user_id).setObjList_num((this.usersList.get(user_id).getObjList_num()+1));
     }
 
     @Override

@@ -16,8 +16,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-//import dsa.utils.ProductManager;
-
 
 @Api(value = "/users", description = "Endpoint to Users Service")
 @Path("/users")
@@ -110,20 +108,23 @@ public class  GameService {
         this.gm.addObj(user_id, obj.getId(),obj.getName(), obj.isObj_type(), obj.getScore());
         return Response.status(201).entity(obj).build();
     }
-    @PUT
-    @ApiOperation(value = "User update", notes = "Nice update")
+
+    @POST
+    @ApiOperation(value = "add new user", notes = "Adding new user to database")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 404, message = "User not found")
+            @ApiResponse(code = 201, message = "Successful", response=User.class),
+            @ApiResponse(code = 500, message = "Validation Error")
     })
-    @Path("/")
-    public Response updateUser(User user) {
-
-        User t = this.gm.modUser(user.getId(), bool, );
-
-        if (t == null) return Response.status(404).build();
-
-        return Response.status(201).build();
+    @Path("/User/{id}/{bool}/{str}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateUser(@PathParam("id") Integer user_id,@PathParam("bool") int bool ,@PathParam("str") String string_toMod) {
+        if(user_id == null || string_toMod == null){
+            return Response.status(500).build();
+        }
+        boolean _bool = true;
+        if (bool == 0) _bool=false;
+        this.gm.modUser(user_id, _bool, string_toMod);
+        User user = this.gm.getUser_byId(user_id);
+        return Response.status(201).entity(user).build();
     }
-
 }
