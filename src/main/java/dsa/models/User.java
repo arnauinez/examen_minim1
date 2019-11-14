@@ -1,14 +1,14 @@
 package dsa.models;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class User {
     private int id;
     private String name;
     private String surname;
-    private List<Order> objList;
+    private List<Obj> objList;
+    private int objList_num;
 
     public User(int user_id, String user_name,String user_surname) {
         this.id = user_id;
@@ -37,15 +37,30 @@ public class User {
         return surname;
     }
 
+    public int getObjList_num() {
+        return objList_num;
+    }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public void addObj(Obj _obj) {
+        this.objList.add(_obj);
+        this.objList_num = this.objList_num+1;
+    }
+    public void rmvObj(int index) {
+        this.objList.remove(index);
+    }
 
-    public List<Order> getObjList() {
+    public List<Obj> getObjList() {
         return objList;
     }
 
-    public void setObjList(List<Order> objList) {
+    public void setObjList(List<Obj> objList) {
         this.objList = objList;
+    }
+
+    public void setObjList_num(int objList_num) {
+        this.objList_num = objList_num;
     }
 }

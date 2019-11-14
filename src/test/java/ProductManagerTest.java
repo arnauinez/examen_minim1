@@ -1,11 +1,7 @@
 import dsa.models.Order;
 import dsa.models.Product;
-import dsa.models.User;
 import dsa.project.ProductManager;
 import dsa.project.ProductManagerImp;
-import dsa.project.ProductManager;
-import dsa.project.ProductManagerImp;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;

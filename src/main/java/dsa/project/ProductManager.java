@@ -2,7 +2,6 @@ package dsa.project;
 
 import dsa.models.Order;
 import dsa.models.Product;
-import dsa.models.User;
 
 import java.util.List;
 
