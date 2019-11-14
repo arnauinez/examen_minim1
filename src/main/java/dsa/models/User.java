@@ -16,6 +16,8 @@ public class User {
         this.surname = user_surname;
         objList = new ArrayList<>();
     }
+    public User() {
+    }
 
     public int getId() {
         return id;

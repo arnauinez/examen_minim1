@@ -3,12 +3,11 @@ package dsa.project;
 import dsa.models.Obj;
 import dsa.models.User;
 import org.apache.log4j.Logger;
-import org.graalvm.compiler.lir.LIRInstruction;
 
 import java.util.*;
 
 public class GameManagerImp implements GameManager{
-    final static Logger log = Logger.getLogger(ProductManagerImp.class);
+    final static Logger log = Logger.getLogger(GameManagerImp.class);
     HashMap <Integer, User> usersList;
     private int usersNum;
 
@@ -29,6 +28,12 @@ public class GameManagerImp implements GameManager{
     @Override
     public int size() {
         return this.usersList.size();
+    }
+
+    @Override
+    public void clear() {
+        instance = null;
+        this.usersList.clear();
     }
 
     @Override
@@ -62,6 +67,11 @@ public class GameManagerImp implements GameManager{
     @Override
     public int getUsersHMAPnum () {
         return this.usersNum;
+    }
+
+    @Override
+    public User getUser_byId(int user_id) {
+        return this.usersList.get(user_id);
     }
 
     @Override
@@ -101,8 +111,14 @@ public class GameManagerImp implements GameManager{
     }
 
     @Override
-    public String objList_ofUSer(int user_id) {
-        return null;
+    public List<Obj> objList_ofUser(int user_id) {
+        //String string_toReturn = "";
+        //int n=0;
+        //List<Obj> _objList = this.usersList.get(user_id).getObjList();
+        //for (Obj _obj: _objList) {
+        //    string_toReturn = String.valueOf(n)+" "+string_toReturn + "\n";
+        //}
+        return this.usersList.get(user_id).getObjList();
     }
 
 }
