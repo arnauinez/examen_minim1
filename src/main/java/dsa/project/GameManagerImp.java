@@ -75,6 +75,11 @@ public class GameManagerImp implements GameManager{
     }
 
     @Override
+    public List<Obj> getObj_fromUser(int user_id) {
+        return this.usersList.get(user_id).getObjList();
+    }
+
+    @Override
     public List<User> getSortedUsersList() {
         String stringaux0 = "";
         for (User _user : this.usersList.values()) {

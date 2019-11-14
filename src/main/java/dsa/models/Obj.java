@@ -12,6 +12,9 @@ public class Obj {
         this.obj_type = obj_type;
         this.score = score;
     }
+    public Obj() {
+
+    }
 
     public int getId() {
         return id;
@@ -44,4 +47,5 @@ public class Obj {
     public void setScore(double score) {
         this.score = score;
     }
+
 }

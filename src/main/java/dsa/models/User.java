@@ -1,6 +1,7 @@
 package dsa.models;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class User {
@@ -14,7 +15,7 @@ public class User {
         this.id = user_id;
         this.name = user_name;
         this.surname = user_surname;
-        objList = new ArrayList<>();
+        objList = new LinkedList<>();
     }
     public User() {
     }
@@ -50,6 +51,7 @@ public class User {
         this.objList.add(_obj);
         this.objList_num = this.objList_num+1;
     }
+
     public void rmvObj(int index) {
         this.objList.remove(index);
     }

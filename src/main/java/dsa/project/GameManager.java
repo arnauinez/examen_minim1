@@ -13,6 +13,7 @@ public interface GameManager {
     public void modUser(int user_id, boolean nameORsurname, String modified_string);
     public int getUsersHMAPnum();
     public User getUser_byId(int user_id);
+    public List<Obj> getObj_fromUser(int user_id);
     public List<User> getSortedUsersList();
 
     public void addObj(int user_id, int id, String name, boolean obj_type, double score);

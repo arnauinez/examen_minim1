@@ -1,5 +1,4 @@
 
-import dsa.models.Product;
 import dsa.models.User;
 import dsa.project.GameManager;
 import dsa.project.GameManagerImp;
